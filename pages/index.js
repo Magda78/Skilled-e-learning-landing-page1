@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/navbar';
 import Banner from '../components/Banner/banner';
 //import Cards from '../components/Cards/cards';
 
-export default function Home(data) {
+export default function Home() {
 	return (
 		<div className="max-w-[1440px] m-auto realative font-PlusJakartaSans relative">
 			<Head>
@@ -31,8 +31,10 @@ export default function Home(data) {
 
 export async function getStaticProps() {
 	const host = process.env.HOST;
-	const res = await fetch(`${host}/api/data`);
+	console.log(host);
+	const res = await fetch('http://localhost:3002/api/data');
 	const data = await res.json();
+  
 	return {
 		props: {
 			data
