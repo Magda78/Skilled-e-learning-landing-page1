@@ -31,7 +31,7 @@ export default function Home(data) {
 
 export async function getStaticProps() {
 	const host = process.env.HOST;
-	const res = await fetch('https://skilled-e-learning-landing-page1.vercel.app/api/data');
+	const res = await fetch(`${host}/api/data`);
 	const data = await res.json();
 	return {
 		props: {
