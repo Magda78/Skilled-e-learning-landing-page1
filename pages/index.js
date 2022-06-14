@@ -31,10 +31,10 @@ export default function Home() {
 
 export async function getStaticProps() {
 	const host = process.env.HOST;
-	console.log(host);
-	const res = await fetch('http://localhost:3002/api/data');
+	console.log('hoooooost', host);
+	const res = await fetch(`${host}/api/data`);
 	const data = await res.json();
-  
+
 	return {
 		props: {
 			data
