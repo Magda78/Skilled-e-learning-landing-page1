@@ -23,7 +23,7 @@ export default function Home(data) {
 			/>
 
 			<Banner />
-			<Cards data={data} />
+			
 			<Footer />
 		</div>
 	);
@@ -47,6 +47,7 @@ export async function getStaticProps() {
 		});
 
 		data = await res.json();
+		console.log(data)
 	} catch (e) {
 		error = e.toString();
 	}
