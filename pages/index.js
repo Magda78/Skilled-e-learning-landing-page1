@@ -35,7 +35,7 @@ export async function getStaticProps() {
 	const host = process.env.HOST;
 	console.log('hoooooost', host);
 	//const res = await fetch(`${host}/api/data`);
-	//let data = [];
+	let data;
 	let error = '';
 	try {
 		const res = await fetch(`${host}/api/data`, {
@@ -48,9 +48,9 @@ export async function getStaticProps() {
 			}
 		});
 
-		const data = await res.json();
+		data = await res.json();
 		console.log(data);
-		return data;
+		//return data;
 	} catch (e) {
 		error = e.toString();
 	}
