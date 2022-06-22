@@ -23,9 +23,9 @@ export default function Home(data) {
 			/>
 
 			<Banner />
-			{console.log('from index', data)}
+
 			<Cards data={data} />
-			{console.log('data frontend', data)}
+
 			<Footer />
 		</div>
 	);
@@ -33,8 +33,6 @@ export default function Home(data) {
 
 export async function getStaticProps() {
 	const host = process.env.HOST;
-	console.log('hoooooost', host);
-	//const res = await fetch(`${host}/api/data`);
 	let data;
 	let error = '';
 	try {
@@ -49,8 +47,6 @@ export async function getStaticProps() {
 		});
 
 		data = await res.json();
-		console.log(data);
-		//return data;
 	} catch (e) {
 		error = e.toString();
 	}
